@@ -1,34 +1,29 @@
 {
-  "version": 2,
+    "version": 2,
+
   "framework": "vite",
-  "nodeVersion": "20.x",
+
   "installCommand": "pnpm install --frozen-lockfile",
+
   "buildCommand": "pnpm --filter frontend build",
+
   "outputDirectory": "frontend/dist",
+
   "env": {
     "ENABLE_EXPERIMENTAL_COREPACK": "1",
     "NODE_ENV": "production"
   },
+
   "build": {
     "env": {
       "NODE_OPTIONS": "--max_old_space_size=4096"
     }
   },
+
   "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
     }
   ]
 }
