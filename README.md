@@ -79,44 +79,68 @@ ct-web-site+blog/
 - **Package Manager**: PNPM (monorepo workspaces)
 - **Hosting**: Vercel (optimized for static SPA)
 
+## 📚 Architettura Monorepo
+
+Questo progetto utilizza un **monorepo** con **pnpm workspaces**. La struttura è organizzata come segue:
+
+- **Root**: Contiene la configurazione del workspace, scripts comuni e file di configurazione globali
+- **packages/frontend**: L'applicazione React + Vite
+- **config/**: File di configurazione JSON per contenuti (portfolio, libri, app)
+- **personal/**: Asset personali come CV in PDF
+
+### Perché pnpm?
+
+1. **Gestione efficiente delle dipendenze**: pnpm crea un unico store centralizzato, risparmiando spazio su disco
+2. **Workspace nativi**: Supporto nativo per monorepo senza configurazioni complesse
+3. **Sicurezza**: Strict mode di default previene accessi non dichiarati alle dipendenze
+4. **Velocità**: Installazioni più rapide grazie al linking simbolico
+
 ## Getting Started
 
 ### Prerequisites
 - Node.js >= 18.0.0
-- PNPM >= 8.0.0 (o npm >= 9.0.0)
+- **PNPM >= 8.0.0** (RICHIESTO - il progetto usa pnpm workspaces)
+
+> ⚠️ **IMPORTANTE**: Questo progetto DEVE essere usato con pnpm, non npm. Il monorepo è configurato per pnpm workspaces.
 
 ## 🚀 Quick Start
 
 1. **Clona il repository**
 ```bash
 git clone <repository-url>
-cd ct-web-site+blog
+cd cristian-tesconi-web-site
 ```
 
-2. **Installa le dipendenze**
+2. **Installa pnpm** (se non lo hai già)
 ```bash
-# Con pnpm (consigliato)
+npm install -g pnpm
+```
+
+3. **Installa le dipendenze**
+```bash
 pnpm install
-
-# Oppure con npm
-npm install
 ```
 
-3. **Avvia il server di sviluppo**
+4. **Avvia il server di sviluppo**
 ```bash
+# Dalla root del progetto
+pnpm run dev:frontend
+
+# Oppure
 cd packages/frontend
 pnpm dev
-
-# Oppure con npm
-npm run dev
 ```
 
-4. **Apri il browser** su [http://localhost:5173](http://localhost:5173)
+5. **Apri il browser** su [http://localhost:5173](http://localhost:5173)
 
 ### 🔨 Comandi Utili
 
 ```bash
-# Sviluppo
+# Sviluppo (dalla root del progetto)
+pnpm run dev:frontend    # Avvia dev server del frontend
+pnpm run build:frontend  # Build di produzione del frontend
+
+# Sviluppo (da packages/frontend)
 cd packages/frontend
 pnpm dev                 # Avvia dev server
 pnpm build              # Build di produzione
@@ -127,6 +151,15 @@ pnpm lint               # ESLint check
 pnpm lint:fix           # Fix automatico ESLint
 pnpm format             # Formatta con Prettier
 pnpm typecheck          # TypeScript type checking
+```
+
+### 🐛 Troubleshooting
+
+**Problema: "Cannot find module typescript/bin/tsc"**
+```bash
+# Soluzione: pulisci e reinstalla con pnpm
+rm -rf node_modules packages/frontend/node_modules pnpm-lock.yaml
+pnpm install
 ```
 
 ## 🎨 Personalizzazione
@@ -195,13 +228,16 @@ Le traduzioni sono in `packages/frontend/src/i18n/locales/`:
 
 4. **Configura le impostazioni del progetto**
    - **Framework Preset**: Vite
-   - **Root Directory**: Lascia vuoto (usa la root del progetto)
-   - **Build Command**: `cd packages/frontend && npm run build`
-   - **Output Directory**: `packages/frontend/dist`
+   - **Root Directory**: `packages/frontend`
+   - **Build Command**: `pnpm run build` (o lascia vuoto per usare il default)
+   - **Output Directory**: `dist`
+   - **Install Command**: `pnpm install` (Vercel rileverà automaticamente pnpm dal packageManager in package.json)
 
 5. **Clicca su "Deploy"**
    - Vercel costruirà e deployerà automaticamente il tuo sito
-   - Ogni push al branch main trigghererà un nuovo deployment
+   - Ogni push al branch main/master trigghererà un nuovo deployment
+
+> 💡 **Nota**: Vercel rileva automaticamente che il progetto usa pnpm dal campo `"packageManager": "pnpm@8.15.0"` nel package.json root.
 
 ### Opzione 2: Deploy tramite CLI Vercel
 
@@ -215,7 +251,12 @@ npm i -g vercel
 vercel login
 ```
 
-3. **Deploy dalla root del progetto**
+3. **Fai il build locale prima del deploy**
+```bash
+pnpm run build:frontend
+```
+
+4. **Deploy dalla root del progetto**
 ```bash
 # Deploy di produzione
 vercel --prod
@@ -251,6 +292,39 @@ Target performance (Lighthouse):
 - Best Practices: 100
 - SEO: 100
 
+## 📋 File di Configurazione Importanti
+
+- `pnpm-workspace.yaml` - Configurazione workspace pnpm
+- `vercel.json` - Configurazione deployment Vercel
+- `packages/frontend/vite.config.ts` - Configurazione Vite
+- `packages/frontend/tailwind.config.js` - Configurazione TailwindCSS
+- `packages/frontend/tsconfig.json` - Configurazione TypeScript
+- `config/portfolio.config.json` - Dati CV e portfolio
+- `config/books.config.json` - Dati libri pubblicati
+
+## 🔧 Script NPM Disponibili
+
+Dalla **root del progetto**:
+```bash
+pnpm run dev:frontend     # Avvia frontend in dev mode
+pnpm run build:frontend   # Build frontend per produzione
+pnpm run dev              # Avvia tutti i servizi (se disponibili)
+pnpm run lint             # Lint di tutti i package
+pnpm run format           # Formatta tutto il codice
+pnpm run typecheck        # Type check TypeScript
+```
+
+Dal package **frontend** (`packages/frontend`):
+```bash
+pnpm dev                  # Avvia dev server
+pnpm build                # Build per produzione
+pnpm preview              # Anteprima build locale
+pnpm lint                 # ESLint check
+pnpm lint:fix             # Fix automatico ESLint
+pnpm format               # Formatta con Prettier
+pnpm typecheck            # Type check
+```
+
 ## 📄 Licenza
 
 Tutti i diritti riservati © Cristian Tesconi
@@ -261,4 +335,4 @@ Tutti i diritti riservati © Cristian Tesconi
 
 ---
 
-**Nota**: Questo progetto è stato semplificato per il deployment su Vercel. Le funzionalità di blog e autenticazione sono state rimosse per rendere il sito completamente statico e ottimizzato per il deployment serverless.
+**Nota**: Questo progetto utilizza un'architettura monorepo ottimizzata per il deployment su Vercel. Il sito è completamente statico e serverless per massime performance e costi contenuti.
