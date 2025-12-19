@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm -w run build:frontend",
+  "buildCommand": "cd packages/frontend && pnpm build",
   "outputDirectory": "packages/frontend/dist",
   "framework": "vite",
   "installCommand": "pnpm install",
