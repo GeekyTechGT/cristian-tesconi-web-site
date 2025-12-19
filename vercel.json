@@ -1,8 +1,9 @@
 {
+  "version": 2,
   "buildCommand": "pnpm --filter frontend build",
   "outputDirectory": "packages/frontend/dist",
-  "framework": "vite",
   "installCommand": "pnpm install",
+  "framework": "vite",
   "build": {
     "env": {
       "ENABLE_EXPERIMENTAL_COREPACK": "1"
