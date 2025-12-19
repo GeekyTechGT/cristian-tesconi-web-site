@@ -1,0 +1,41 @@
+{
+  "storage": {
+    "type": "local",
+    "local": {
+      "postsDir": "data/blog/posts",
+      "commentsDir": "data/blog/comments",
+      "likesDir": "data/blog/likes",
+      "uploadsDir": "public/blog/uploads"
+    },
+    "cloud": {
+      "provider": "google-drive",
+      "enabled": false,
+      "googleDrive": {
+        "folderId": "",
+        "credentialsPath": "config/google-drive-credentials.json"
+      },
+      "s3": {
+        "bucket": "",
+        "region": "",
+        "accessKeyId": "",
+        "secretAccessKey": ""
+      }
+    }
+  },
+  "admin": {
+    "username": "admin",
+    "passwordHash": "$2b$10$rKZ5qJ5YvH8X5qZ5qJ5YvO5qJ5YvH8X5qZ5qJ5YvH8X5qZ5qJ5Yv",
+    "sessionTimeout": 3600000
+  },
+  "posts": {
+    "supportedFormats": ["pdf", "html", "md", "txt"],
+    "maxFileSize": 10485760,
+    "enableComments": true,
+    "enableLikes": true,
+    "moderationRequired": false
+  },
+  "pagination": {
+    "postsPerPage": 10,
+    "commentsPerPage": 20
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "ct-web-site-blog-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cristian Tesconi - Full-stack web application with blog and authentication",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "scripts": {
+    "dev": "pnpm --parallel --filter \"./packages/**\" dev",
+    "dev:frontend": "pnpm --filter frontend dev",
+    "dev:blog": "cd packages/backend-blog && uvicorn app.main:app --reload --port 8001",
+    "dev:auth": "cd packages/backend-auth && uvicorn app.main:app --reload --port 8002",
+    "build": "pnpm --filter frontend build",
+    "build:frontend": "pnpm --filter frontend build",
+    "lint": "pnpm --recursive lint",
+    "format": "prettier --write \"packages/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "typecheck": "pnpm --filter frontend typecheck",
+    "test": "pnpm --recursive test",
+    "clean": "pnpm --recursive exec rm -rf node_modules dist .turbo && rm -rf node_modules",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:build": "docker-compose build"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "@types/node": "^20.11.5"
+  },
+  "keywords": [
+    "monorepo",
+    "react",
+    "fastapi",
+    "typescript",
+    "python",
+    "vite"
+  ],
+  "author": "Cristian Tesconi",
+  "license": "MIT"
+}

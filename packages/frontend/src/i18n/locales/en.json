@@ -1,0 +1,172 @@
+{
+  "app": {
+    "title": "Cristian Tesconi - Robotics & Automation Engineer",
+    "description": "Robotics and Automation Engineer"
+  },
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "books": "Books",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Cristian Tesconi",
+    "title": "Robotics & Automation Engineer",
+    "subtitle": "Specialized in intelligent automation, control systems, and artificial intelligence",
+    "viewPortfolio": "View Portfolio",
+    "viewBlog": "Go to Blog"
+  },
+  "about": {
+    "title": "About Me",
+    "bio": "Robotics and automation engineer with multi-year experience in developing intelligent systems for the automotive industry. Currently Team Leader at Dumarey Softronix, where I lead the development of innovative software applications for the automotive sector.",
+    "downloadCV": "Download CV"
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "current": "Current",
+    "present": "Present"
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "subtitle": "My core competencies in programming, robotics and automation gained through years of experience in automotive and robotics sectors",
+    "legend": "Proficiency levels",
+    "categories": {
+      "programming": "Programming",
+      "engineering": "Engineering",
+      "systems": "Systems"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "languages": "Languages",
+    "education": "Education",
+    "experience": "Experience",
+    "yearsExperience": "Years of experience",
+    "educationDetails": "Educational Background",
+    "thesis": "Thesis",
+    "mainCourses": "Main courses attended",
+    "more": "more",
+    "downloadCV": "Download CV"
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "subtitle": "My professional journey in automotive and robotics sectors",
+    "current": "Current",
+    "present": "Present",
+    "responsibilities": "Main responsibilities",
+    "technologies": "Technologies"
+  },
+  "books": {
+    "title": "Published Books",
+    "subtitle": "Discover my books on programming, artificial intelligence and technology",
+    "description": "Explore my collection of technical books",
+    "viewOnAmazon": "View on Amazon",
+    "learnMore": "Learn More"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a project in mind? Let's get in touch",
+    "description": "Contact me for collaborations, consultations or just to have a chat",
+    "email": "Email",
+    "location": "Location",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "getInTouch": "Get in Touch",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "Your email",
+      "subject": "Subject",
+      "subjectPlaceholder": "What would you like to discuss?",
+      "message": "Message",
+      "messagePlaceholder": "Write your message here...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully! I'll get back to you soon.",
+      "error": "Error sending message. Please try again later."
+    }
+  },
+  "blog": {
+    "title": "Tech Blog",
+    "subtitle": "Thoughts and insights on robotics, automation, and technology",
+    "description": "Explore articles and insights on robotics, automation and technology",
+    "readMore": "Read More",
+    "like": "Like",
+    "likes": "Likes",
+    "comment": "Comment",
+    "comments": "Comments",
+    "share": "Share",
+    "addComment": "Add a comment",
+    "yourName": "Your name",
+    "yourEmail": "Your email",
+    "yourComment": "Your comment",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "backToBlog": "Back to Blog",
+    "relatedPosts": "Related Posts",
+    "noComments": "No comments yet. Be the first to comment!",
+    "commentSuccess": "Comment added successfully",
+    "commentError": "Error adding comment",
+    "loading": "Loading...",
+    "noPosts": "No posts available"
+  },
+  "admin": {
+    "login": "Login",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "dashboard": "Dashboard",
+    "createPost": "Create New Post",
+    "editPost": "Edit Post",
+    "deletePost": "Delete Post",
+    "savePost": "Save Post",
+    "title": "Title",
+    "content": "Content",
+    "excerpt": "Excerpt",
+    "slug": "Slug",
+    "published": "Published",
+    "draft": "Draft",
+    "status": "Status",
+    "actions": "Actions",
+    "edit": "Edit",
+    "delete": "Delete",
+    "view": "View",
+    "confirmDelete": "Are you sure you want to delete this post?",
+    "loginRequired": "Login required",
+    "unauthorized": "Unauthorized"
+  },
+  "cookies": {
+    "title": "Cookie Notice",
+    "message": "We use essential cookies to ensure the site functions properly and for authentication. No personal data is tracked or shared with third parties.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "learnMore": "Learn More"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "noResults": "No results found",
+    "readingTime": "{{minutes}} min read"
+  },
+  "footer": {
+    "copyright": "© {{year}} Cristian Tesconi. All rights reserved.",
+    "madeWith": "Made with",
+    "quickLinks": "Quick Links",
+    "followMe": "Follow Me"
+  }
+}

@@ -1,0 +1,532 @@
+{
+  "personalInfo": {
+    "name": "Cristian Tesconi",
+    "title": {
+      "it": "Ingegnere Robotico e dell'Automazione",
+      "en": "Robotic and Automation Engineer"
+    },
+    "subtitle": {
+      "it": "Specializzato in automazione intelligente, sistemi di controllo e intelligenza artificiale",
+      "en": "Specialized in intelligent automation, control systems, and artificial intelligence"
+    },
+    "bio": {
+      "it": "Ingegnere robotico e dell'automazione con oltre 6 anni di esperienza nello sviluppo di sistemi intelligenti per l'industria automotive. Attualmente SIL Engineer presso Dumarey Softronix, specializzato in modellazione di plant, sviluppo di tool per test SIL e simulazione. Esperienza in sviluppo software embedded, algoritmi di controllo avanzati e veicoli autonomi.",
+      "en": "Robotic and automation engineer with over 6 years of experience in developing intelligent systems for the automotive industry. Currently SIL Engineer at Dumarey Softronix, specialized in plant modeling, SIL test tool development and simulation. Experience in embedded software development, advanced control algorithms and autonomous vehicles."
+    },
+    "email": "cristiantesco@gmail.com",
+    "phone": "+39 3401456297",
+    "linkedin": "https://www.linkedin.com/in/cristian-tesconi-936832117",
+    "github": "https://github.com/cristiantesconi",
+    "location": {
+      "it": "Torino, Italia",
+      "en": "Turin, Italy"
+    },
+    "cvDownloadUrl": "/cv/CV_CristianTesconi.pdf"
+  },
+  "education": [
+    {
+      "degree": {
+        "it": "Laurea Magistrale in Ingegneria Robotica e dell'Automazione",
+        "en": "Master's Degree in Robotic and Automation Engineering"
+      },
+      "institution": {
+        "it": "Università di Pisa",
+        "en": "University of Pisa"
+      },
+      "location": "Pisa, Italy",
+      "period": "2016 - 2019",
+      "grade": "110/110 cum laude",
+      "thesis": {
+        "it": "Identificazione di sorgenti sottomarine con algoritmi di ottimizzazione globale",
+        "en": "Identification of underwater submarine source with global optimization algorithm"
+      },
+      "courses": {
+        "it": [
+          "Probabilità e processi stocastici",
+          "Sistemi elettronici per robotica e automazione",
+          "Teoria dei sistemi e controllo",
+          "Termofluidodinamica e macchine",
+          "Controllo digitale",
+          "Meccanica dei robot",
+          "Controllo di processi",
+          "Controllo e identificazione di sistemi incerti",
+          "Robotica sottomarina",
+          "Robotica aerospaziale",
+          "Ricerca operativa",
+          "Controllo di robot",
+          "Sistemi robotici distribuiti",
+          "Sistemi di guida e navigazione"
+        ],
+        "en": [
+          "Probability and stochastic processes",
+          "Electronic systems for Robotics and Automation",
+          "Theory of systems and control",
+          "Thermofluid dynamics and machines",
+          "Digital Control",
+          "Robot Mechanics",
+          "Process control",
+          "Control and identification of uncertain systems",
+          "Underwater Robotics",
+          "Aerospace Robotics",
+          "Operative research",
+          "Robot control",
+          "Distributed robotic systems",
+          "Guidance and navigation systems"
+        ]
+      }
+    },
+    {
+      "degree": {
+        "it": "Laurea Triennale in Ingegneria Biomedica",
+        "en": "Bachelor's Degree in Biomedical Engineering"
+      },
+      "institution": {
+        "it": "Università di Pisa",
+        "en": "University of Pisa"
+      },
+      "location": "Pisa, Italy",
+      "period": "2013 - 2016",
+      "grade": "103/110",
+      "thesis": {
+        "it": "Strategie basate sulla visione biologica per il controllo di robot",
+        "en": "Strategies based on biological vision for robot control"
+      }
+    },
+    {
+      "degree": {
+        "it": "Abilitazione alla professione di ingegnere",
+        "en": "Qualification to practice as an engineer"
+      },
+      "institution": {
+        "it": "Sezione A, settore industriale",
+        "en": "Section A, industrial field"
+      },
+      "period": "2022",
+      "grade": null
+    }
+  ],
+  "experiences": [
+    {
+      "company": "Dumarey Softronix",
+      "role": {
+        "it": "SIL Engineer",
+        "en": "SIL Engineer"
+      },
+      "location": "Turin, Italy",
+      "period": "Feb 2021 - Presente",
+      "current": true,
+      "description": {
+        "it": "Modellazione di plant e sviluppo di tool per l'esecuzione di test SIL (Software-in-the-Loop) su sistemi automotive",
+        "en": "Plant modeling and tool development to perform SIL (Software-in-the-Loop) tests on automotive systems"
+      },
+      "responsibilities": {
+        "it": [
+          "Sviluppo e manutenzione di modelli di simulazione per sistemi automotive",
+          "Creazione di tool automatizzati per test SIL utilizzando C++, Python e Qt",
+          "Integrazione e validazione di componenti FMU (Functional Mock-up Unit)",
+          "Analisi e debugging utilizzando INCA e MDA",
+          "Gestione comunicazioni CAN e LIN",
+          "Implementazione di architetture classic AUTOSAR"
+        ],
+        "en": [
+          "Development and maintenance of simulation models for automotive systems",
+          "Creation of automated tools for SIL testing using C++, Python and Qt",
+          "Integration and validation of FMU (Functional Mock-up Unit) components",
+          "Analysis and debugging using INCA and MDA",
+          "CAN and LIN communications management",
+          "Implementation of classic AUTOSAR architectures"
+        ]
+      },
+      "technologies": ["C/C++", "Python", "Bash", "Batch", "Qt", "Git", "Bitbucket", "OpenModelica", "INCA", "MDA", "CAN", "LIN", "FMU", "AUTOSAR"]
+    },
+    {
+      "company": "FCA (Fiat Chrysler Automobiles)",
+      "role": {
+        "it": "Ingegnere Software Embedded",
+        "en": "Embedded Software Engineer"
+      },
+      "location": "Turin, Italy",
+      "period": "Sept 2019 - Feb 2021",
+      "current": false,
+      "description": {
+        "it": "Sviluppo di applicazioni C++ per modulo Telematics Box (TBM) nel dipartimento di sviluppo prodotto - Elettronica e Sistemi Embedded",
+        "en": "C++ application development for Telematics Box Module (TBM) in Product Development - Electronics and Embedded Systems"
+      },
+      "responsibilities": {
+        "it": [
+          "Sviluppo applicazione C++ per Remote Operation su Telematics Box Module",
+          "Unit testing con Google Test e test su banco HIL",
+          "Test in-vehicle e validazione funzionale",
+          "Review dei requisiti funzionali utilizzando DOORS",
+          "Sviluppo in metodologia Agile/Scrum",
+          "Analisi e debugging con CANAlyzer, Dianalyzer, CDA, DLT"
+        ],
+        "en": [
+          "C++ application development (Remote Operation) for Telematics Box Module",
+          "Unit testing with Google Test and HIL bench testing",
+          "In-vehicle testing and functional validation",
+          "Review of functional requirements using DOORS",
+          "Development in Agile/Scrum methodology",
+          "Analysis and debugging with CANAlyzer, Dianalyzer, CDA, DLT"
+        ]
+      },
+      "technologies": ["C/C++", "Python", "CAPL", "Eclipse", "VSCode", "PyCharm", "CANAlyzer", "Dianalyzer", "CDA", "DLT", "Google Test", "DOORS", "Agile/Scrum"]
+    },
+    {
+      "company": "Università di Pisa - RoboTeam Italy",
+      "role": {
+        "it": "Ingegnere Sistemi di Controllo",
+        "en": "Control System Engineer"
+      },
+      "location": "Pisa, Italy",
+      "period": "Sept 2017 - Sept 2018",
+      "current": false,
+      "description": {
+        "it": "Membro del team RoboTeam Italy per il progetto ROBORACE - sviluppo algoritmi per veicolo elettrico a guida autonoma",
+        "en": "Member of RoboTeam Italy for ROBORACE project - algorithms development for self-driving electric vehicle"
+      },
+      "responsibilities": {
+        "it": [
+          "Sviluppo algoritmi di controllo per veicoli autonomi",
+          "Implementazione di controllo Pure Pursuit",
+          "Progettazione e tuning di controllori PID",
+          "Implementazione di NMPC (Nonlinear Model Predictive Control)",
+          "Simulazione e test in ambiente Matlab/Simulink"
+        ],
+        "en": [
+          "Control algorithms development for autonomous vehicles",
+          "Pure Pursuit control implementation",
+          "PID controller design and tuning",
+          "NMPC (Nonlinear Model Predictive Control) implementation",
+          "Simulation and testing in Matlab/Simulink environment"
+        ]
+      },
+      "technologies": ["Matlab/Simulink", "Pure Pursuit", "PID", "NMPC", "Autonomous Driving"]
+    }
+  ],
+  "skills": {
+    "programming": {
+      "title": {
+        "it": "Linguaggi di Programmazione",
+        "en": "Programming Languages"
+      },
+      "items": [
+        {
+          "name": "Matlab/Simulink",
+          "proficiency": "expert",
+          "description": {
+            "it": "Robotics Toolbox, Control System Toolbox, AppDesigner",
+            "en": "Robotics Toolbox, Control System Toolbox, AppDesigner"
+          }
+        },
+        {
+          "name": "C++ 11/14",
+          "proficiency": "expert",
+          "description": {
+            "it": "STL, multi-threading, template programming",
+            "en": "STL, multi-threading, template programming"
+          }
+        },
+        {
+          "name": "Python",
+          "proficiency": "expert",
+          "description": {
+            "it": "Scripting, automazione, data analysis",
+            "en": "Scripting, automation, data analysis"
+          }
+        },
+        {
+          "name": "Bash/Batch",
+          "proficiency": "proficient",
+          "description": {
+            "it": "Scripting di sistema e automazione",
+            "en": "System scripting and automation"
+          }
+        },
+        {
+          "name": "LaTeX",
+          "proficiency": "proficient",
+          "description": {
+            "it": "Documentazione tecnica e scientifica",
+            "en": "Technical and scientific documentation"
+          }
+        },
+        {
+          "name": "CAPL",
+          "proficiency": "intermediate",
+          "description": {
+            "it": "Scripting per CAN network analysis",
+            "en": "Scripting for CAN network analysis"
+          }
+        }
+      ]
+    },
+    "roboticsAutomation": {
+      "title": {
+        "it": "Robotica & Automazione",
+        "en": "Robotics & Automation"
+      },
+      "items": [
+        {
+          "name": {
+            "it": "Progettazione Sistemi di Controllo",
+            "en": "Control System Design"
+          },
+          "description": {
+            "it": "PID, MPC, NMPC, State-space, Adaptive control",
+            "en": "PID, MPC, NMPC, State-space, Adaptive control"
+          }
+        },
+        {
+          "name": {
+            "it": "Controllo Model-Based",
+            "en": "Model Based Control"
+          },
+          "description": {
+            "it": "Sviluppo e validazione di controllori basati su modello",
+            "en": "Model-based controller development and validation"
+          }
+        },
+        {
+          "name": {
+            "it": "Simulazione e Modellazione",
+            "en": "Simulation & Modeling"
+          },
+          "description": {
+            "it": "OpenModelica, Simulink, FMU, Plant modeling",
+            "en": "OpenModelica, Simulink, FMU, Plant modeling"
+          }
+        },
+        {
+          "name": {
+            "it": "Veicoli Autonomi",
+            "en": "Autonomous Vehicles"
+          },
+          "description": {
+            "it": "Path planning, trajectory tracking, sensor fusion",
+            "en": "Path planning, trajectory tracking, sensor fusion"
+          }
+        },
+        {
+          "name": {
+            "it": "Intelligenza Artificiale",
+            "en": "Artificial Intelligence"
+          },
+          "description": {
+            "it": "Machine learning applicato a controllo e robotica",
+            "en": "Machine learning applied to control and robotics"
+          }
+        }
+      ]
+    },
+    "toolsFrameworks": {
+      "title": {
+        "it": "Tools & Framework",
+        "en": "Tools & Frameworks"
+      },
+      "items": [
+        {
+          "name": "Git/Bitbucket",
+          "description": {
+            "it": "Version control e collaborazione",
+            "en": "Version control and collaboration"
+          }
+        },
+        {
+          "name": "Docker",
+          "description": {
+            "it": "Containerizzazione e deployment",
+            "en": "Containerization and deployment"
+          }
+        },
+        {
+          "name": "ROS",
+          "description": {
+            "it": "Robot Operating System",
+            "en": "Robot Operating System"
+          }
+        },
+        {
+          "name": "Qt",
+          "description": {
+            "it": "Sviluppo GUI multi-platform",
+            "en": "Multi-platform GUI development"
+          }
+        },
+        {
+          "name": "INCA/MDA",
+          "description": {
+            "it": "Calibrazione e misurazione ECU",
+            "en": "ECU calibration and measurement"
+          }
+        },
+        {
+          "name": "CANalyzer/CANoe",
+          "description": {
+            "it": "Analisi reti CAN/LIN",
+            "en": "CAN/LIN network analysis"
+          }
+        },
+        {
+          "name": "DOORS",
+          "description": {
+            "it": "Requirements management",
+            "en": "Requirements management"
+          }
+        }
+      ]
+    },
+    "automotive": {
+      "title": {
+        "it": "Automotive",
+        "en": "Automotive"
+      },
+      "items": [
+        {
+          "name": "AUTOSAR",
+          "description": {
+            "it": "Classic AUTOSAR architecture",
+            "en": "Classic AUTOSAR architecture"
+          }
+        },
+        {
+          "name": "CAN/LIN",
+          "description": {
+            "it": "Protocolli di comunicazione automotive",
+            "en": "Automotive communication protocols"
+          }
+        },
+        {
+          "name": "FMU",
+          "description": {
+            "it": "Functional Mock-up Unit",
+            "en": "Functional Mock-up Unit"
+          }
+        },
+        {
+          "name": "SIL/HIL Testing",
+          "description": {
+            "it": "Software/Hardware-in-the-Loop testing",
+            "en": "Software/Hardware-in-the-Loop testing"
+          }
+        }
+      ]
+    },
+    "hardware": {
+      "title": {
+        "it": "Hardware",
+        "en": "Hardware"
+      },
+      "items": [
+        {
+          "name": "Arduino",
+          "description": {
+            "it": "Prototipazione rapida",
+            "en": "Rapid prototyping"
+          }
+        },
+        {
+          "name": "STM32F4",
+          "description": {
+            "it": "Microcontrollori ARM (livello base)",
+            "en": "ARM microcontrollers (basic level)"
+          }
+        }
+      ]
+    },
+    "operatingSystems": {
+      "title": {
+        "it": "Sistemi Operativi",
+        "en": "Operating Systems"
+      },
+      "items": [
+        {
+          "name": "Linux",
+          "description": {
+            "it": "Ubuntu, shell scripting, amministrazione",
+            "en": "Ubuntu, shell scripting, administration"
+          }
+        },
+        {
+          "name": "Windows",
+          "description": {
+            "it": "PowerShell, batch scripting",
+            "en": "PowerShell, batch scripting"
+          }
+        }
+      ]
+    },
+    "methodologies": {
+      "title": {
+        "it": "Metodologie",
+        "en": "Methodologies"
+      },
+      "items": [
+        {
+          "name": "Agile/Scrum",
+          "description": {
+            "it": "Sviluppo agile e lavoro in team",
+            "en": "Agile development and teamwork"
+          }
+        },
+        {
+          "name": "Unit Testing",
+          "description": {
+            "it": "Google Test, test automation",
+            "en": "Google Test, test automation"
+          }
+        },
+        {
+          "name": "CI/CD",
+          "description": {
+            "it": "Continuous Integration/Deployment",
+            "en": "Continuous Integration/Deployment"
+          }
+        }
+      ]
+    }
+  },
+  "languages": [
+    {
+      "name": "Italiano",
+      "level": {
+        "it": "Madrelingua",
+        "en": "Native speaker"
+      },
+      "code": "it"
+    },
+    {
+      "name": "English",
+      "level": {
+        "it": "Livello professionale",
+        "en": "Professional level"
+      },
+      "code": "en"
+    }
+  ],
+  "interests": [
+    {
+      "name": {
+        "it": "Guida Autonoma",
+        "en": "Autonomous Driving"
+      },
+      "icon": "car"
+    },
+    {
+      "name": {
+        "it": "Intelligenza Artificiale",
+        "en": "Artificial Intelligence"
+      },
+      "icon": "brain"
+    },
+    {
+      "name": {
+        "it": "Sistemi Embedded",
+        "en": "Embedded Systems"
+      },
+      "icon": "cpu"
+    }
+  ],
+  "certifications": [],
+  "projects": []
+}

@@ -1,0 +1,62 @@
+{
+  "appName": "Cristian Tesconi - Robotics & Automation Engineer",
+  "theme": {
+    "default": "black",
+    "colors": {
+      "primary": "#16FFBB",
+      "primaryLight": "#5AFFCE",
+      "primaryDark": "#0DCCAA",
+      "primaryDimmed": "#0A9988",
+      "primaryLightMode": "#1F2937",
+      "primaryLightModeDark": "#111827",
+      "primaryLightModeLight": "#374151",
+      "secondary": "#16FFBB",
+      "secondaryDark": "#0DCCAA",
+      "darkBg": "#0A0A0A",
+      "darkBgElevated": "#121212",
+      "darkBgSubtle": "#0F0F0F",
+      "lightBg": "#FFFFFF",
+      "lightBgElevated": "#F9FAFB",
+      "lightBgSubtle": "#F3F4F6",
+      "lightText": "#F0FCFF",
+      "darkText": "#1F2937",
+      "textPrimary": "#000000",
+      "textSecondary": "#1F2937",
+      "textMuted": "#4B5563",
+      "textLight": "#B8C5C9",
+      "surface": "#FFFFFF",
+      "surfaceDark": "#1A1A1A",
+      "surfaceDarker": "#141414",
+      "border": "#D1D5DB",
+      "borderDark": "#2A2A2A",
+      "borderSubtle": "#1F1F1F",
+      "borderLight": "#000000",
+      "hover": "#F3F4F6",
+      "hoverDark": "#252525",
+      "accent": "#16FFBB",
+      "error": "#EF4444",
+      "warning": "#F59E0B",
+      "info": "#16FFBB",
+      "success": "#16FFBB"
+    },
+    "fonts": {
+      "sans": ["Inter", "SF Pro Display", "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
+      "mono": ["JetBrains Mono", "Fira Code", "Consolas", "monospace"]
+    }
+  },
+  "seo": {
+    "keywords": [
+      "cristian tesconi",
+      "cristian.tesconi",
+      "ingegnere robotico",
+      "robotics engineer",
+      "automation engineer"
+    ],
+    "description": {
+      "it": "Ingegnere robotico e dell'automazione",
+      "en": "Robotics and Automation Engineer"
+    }
+  },
+  "languages": ["it", "en"],
+  "defaultLanguage": "it"
+}

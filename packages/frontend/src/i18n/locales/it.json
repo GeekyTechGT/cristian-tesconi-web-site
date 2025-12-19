@@ -1,0 +1,172 @@
+{
+  "app": {
+    "title": "Cristian Tesconi - Ingegnere Robotico e dell'Automazione",
+    "description": "Ingegnere robotico e dell'automazione"
+  },
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "about": "Chi Sono",
+    "experience": "Esperienza",
+    "skills": "Competenze",
+    "books": "Libri",
+    "contact": "Contatti"
+  },
+  "hero": {
+    "greeting": "Ciao, sono",
+    "name": "Cristian Tesconi",
+    "title": "Ingegnere Robotico e dell'Automazione",
+    "subtitle": "Specializzato in automazione intelligente, sistemi di controllo e intelligenza artificiale",
+    "viewPortfolio": "Vedi Portfolio",
+    "viewBlog": "Vai al Blog"
+  },
+  "about": {
+    "title": "Chi Sono",
+    "bio": "Ingegnere robotico e dell'automazione con esperienza pluriennale nello sviluppo di sistemi intelligenti per l'industria automobilistica. Attualmente Team Leader presso Dumarey Softronix, dove guido lo sviluppo di applicazioni software innovative per il settore automotive.",
+    "downloadCV": "Scarica CV"
+  },
+  "experience": {
+    "title": "Esperienza Professionale",
+    "current": "Attuale",
+    "present": "Presente"
+  },
+  "skills": {
+    "title": "Competenze Tecniche",
+    "subtitle": "Le mie competenze principali in programmazione, robotica e automazione acquisite attraverso anni di esperienza nel settore automotive e robotico",
+    "legend": "Livelli di competenza",
+    "categories": {
+      "programming": "Programmazione",
+      "engineering": "Ingegneria",
+      "systems": "Sistemi"
+    }
+  },
+  "about": {
+    "title": "Chi Sono",
+    "languages": "Lingue",
+    "education": "Formazione",
+    "experience": "Esperienza",
+    "yearsExperience": "Anni di esperienza",
+    "educationDetails": "Percorso Formativo",
+    "thesis": "Tesi",
+    "mainCourses": "Principali corsi seguiti",
+    "more": "altri",
+    "downloadCV": "Scarica CV"
+  },
+  "experience": {
+    "title": "Esperienza Professionale",
+    "subtitle": "Il mio percorso professionale nel settore automotive e robotica",
+    "current": "Attuale",
+    "present": "Presente",
+    "responsibilities": "Responsabilità principali",
+    "technologies": "Tecnologie"
+  },
+  "books": {
+    "title": "Libri Pubblicati",
+    "subtitle": "Scopri i miei libri su programmazione, intelligenza artificiale e tecnologia",
+    "description": "Esplora la mia collezione di libri tecnici",
+    "viewOnAmazon": "Vedi su Amazon",
+    "learnMore": "Scopri di più"
+  },
+  "contact": {
+    "title": "Contatti",
+    "subtitle": "Hai un progetto in mente? Mettiamoci in contatto",
+    "description": "Contattami per collaborazioni, consulenze o semplicemente per fare una chiacchierata",
+    "email": "Email",
+    "location": "Posizione",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "getInTouch": "Mettiti in contatto",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "Il tuo nome",
+      "email": "Email",
+      "emailPlaceholder": "La tua email",
+      "subject": "Oggetto",
+      "subjectPlaceholder": "Di cosa vuoi parlare?",
+      "message": "Messaggio",
+      "messagePlaceholder": "Scrivi il tuo messaggio qui...",
+      "send": "Invia Messaggio",
+      "sending": "Invio in corso...",
+      "success": "Messaggio inviato con successo! Ti risponderò presto.",
+      "error": "Errore nell'invio del messaggio. Riprova più tardi."
+    }
+  },
+  "blog": {
+    "title": "Blog Tecnologico",
+    "subtitle": "Pensieri e approfondimenti su robotica, automazione e tecnologia",
+    "description": "Esplora articoli e approfondimenti su robotica, automazione e tecnologia",
+    "readMore": "Leggi di più",
+    "like": "Mi piace",
+    "likes": "Mi piace",
+    "comment": "Commento",
+    "comments": "Commenti",
+    "share": "Condividi",
+    "addComment": "Aggiungi un commento",
+    "yourName": "Il tuo nome",
+    "yourEmail": "La tua email",
+    "yourComment": "Il tuo commento",
+    "submit": "Invia",
+    "cancel": "Annulla",
+    "backToBlog": "Torna al Blog",
+    "relatedPosts": "Articoli Correlati",
+    "noComments": "Nessun commento ancora. Sii il primo a commentare!",
+    "commentSuccess": "Commento aggiunto con successo",
+    "commentError": "Errore nell'aggiungere il commento",
+    "loading": "Caricamento...",
+    "noPosts": "Nessun articolo disponibile"
+  },
+  "admin": {
+    "login": "Accedi",
+    "logout": "Esci",
+    "email": "Email",
+    "password": "Password",
+    "dashboard": "Dashboard",
+    "createPost": "Crea Nuovo Post",
+    "editPost": "Modifica Post",
+    "deletePost": "Elimina Post",
+    "savePost": "Salva Post",
+    "title": "Titolo",
+    "content": "Contenuto",
+    "excerpt": "Estratto",
+    "slug": "Slug",
+    "published": "Pubblicato",
+    "draft": "Bozza",
+    "status": "Stato",
+    "actions": "Azioni",
+    "edit": "Modifica",
+    "delete": "Elimina",
+    "view": "Visualizza",
+    "confirmDelete": "Sei sicuro di voler eliminare questo post?",
+    "loginRequired": "Accesso richiesto",
+    "unauthorized": "Non autorizzato"
+  },
+  "cookies": {
+    "title": "Informativa Cookie",
+    "message": "Utilizziamo cookie essenziali per garantire il funzionamento del sito e l'autenticazione. Nessun dato personale viene tracciato o condiviso con terze parti.",
+    "accept": "Accetta",
+    "decline": "Rifiuta",
+    "learnMore": "Scopri di più"
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "error": "Si è verificato un errore",
+    "retry": "Riprova",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "close": "Chiudi",
+    "back": "Indietro",
+    "next": "Avanti",
+    "previous": "Precedente",
+    "search": "Cerca",
+    "noResults": "Nessun risultato trovato",
+    "readingTime": "{{minutes}} min di lettura"
+  },
+  "footer": {
+    "copyright": "© {{year}} Cristian Tesconi. Tutti i diritti riservati.",
+    "madeWith": "Realizzato con",
+    "quickLinks": "Link Rapidi",
+    "followMe": "Seguimi"
+  }
+}

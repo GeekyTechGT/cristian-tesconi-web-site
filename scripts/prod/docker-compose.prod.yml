@@ -1,0 +1,137 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database for Auth Service
+  auth-db:
+    image: postgres:16-alpine
+    container_name: ct-auth-db-prod
+    restart: always
+    environment:
+      POSTGRES_DB: ${AUTH_DB_NAME:-auth_db}
+      POSTGRES_USER: ${AUTH_DB_USER:-authuser}
+      POSTGRES_PASSWORD: ${AUTH_DB_PASSWORD}
+    volumes:
+      - auth_db_data:/var/lib/postgresql/data
+    networks:
+      - ct-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${AUTH_DB_USER:-authuser}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # PostgreSQL Database for Blog Service
+  blog-db:
+    image: postgres:16-alpine
+    container_name: ct-blog-db-prod
+    restart: always
+    environment:
+      POSTGRES_DB: ${BLOG_DB_NAME:-blog_db}
+      POSTGRES_USER: ${BLOG_DB_USER:-bloguser}
+      POSTGRES_PASSWORD: ${BLOG_DB_PASSWORD}
+    volumes:
+      - blog_db_data:/var/lib/postgresql/data
+    networks:
+      - ct-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${BLOG_DB_USER:-bloguser}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Auth Backend Service
+  backend-auth:
+    build:
+      context: ../../packages/backend-auth
+      dockerfile: Dockerfile
+    container_name: ct-backend-auth-prod
+    restart: always
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${AUTH_DB_USER:-authuser}:${AUTH_DB_PASSWORD}@auth-db:5432/${AUTH_DB_NAME:-auth_db}
+      SECRET_KEY: ${SECRET_KEY}
+      ALGORITHM: ${ALGORITHM:-HS256}
+      ACCESS_TOKEN_EXPIRE_MINUTES: ${ACCESS_TOKEN_EXPIRE_MINUTES:-30}
+      INITIAL_SUPERUSER_EMAIL: ${INITIAL_SUPERUSER_EMAIL}
+      INITIAL_SUPERUSER_USERNAME: ${INITIAL_SUPERUSER_USERNAME}
+      INITIAL_SUPERUSER_PASSWORD: ${INITIAL_SUPERUSER_PASSWORD}
+    depends_on:
+      auth-db:
+        condition: service_healthy
+    networks:
+      - ct-network
+    command: >
+      sh -c "alembic upgrade head &&
+             uvicorn app.main:app --host 0.0.0.0 --port 8002"
+
+  # Blog Backend Service
+  backend-blog:
+    build:
+      context: ../../packages/backend-blog
+      dockerfile: Dockerfile
+    container_name: ct-backend-blog-prod
+    restart: always
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${BLOG_DB_USER:-bloguser}:${BLOG_DB_PASSWORD}@blog-db:5432/${BLOG_DB_NAME:-blog_db}
+      SECRET_KEY: ${SECRET_KEY}
+      ALGORITHM: ${ALGORITHM:-HS256}
+    depends_on:
+      blog-db:
+        condition: service_healthy
+    networks:
+      - ct-network
+    command: >
+      sh -c "alembic upgrade head &&
+             uvicorn app.main:app --host 0.0.0.0 --port 8001"
+
+  # Frontend
+  frontend:
+    build:
+      context: ../../packages/frontend
+      dockerfile: Dockerfile.prod
+      args:
+        VITE_AUTH_API_URL: ${VITE_AUTH_API_URL:-https://cristiantesconi.it/api/auth}
+        VITE_BLOG_API_URL: ${VITE_BLOG_API_URL:-https://cristiantesconi.it/api/blog}
+    container_name: ct-frontend-prod
+    restart: always
+    networks:
+      - ct-network
+
+  # Nginx Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    container_name: ct-nginx-prod
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+    depends_on:
+      - frontend
+      - backend-auth
+      - backend-blog
+    networks:
+      - ct-network
+
+  # Certbot for SSL certificates
+  certbot:
+    image: certbot/certbot
+    container_name: ct-certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - ./certbot-webroot:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+
+volumes:
+  auth_db_data:
+  blog_db_data:
+  certbot-etc:
+  certbot-var:
+
+networks:
+  ct-network:
+    driver: bridge

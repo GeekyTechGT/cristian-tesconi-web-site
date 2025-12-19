@@ -1,0 +1,52 @@
+{
+  "books": [
+    {
+      "title": {
+        "it": "L'arte della programmazione Python",
+        "en": "The Art of Python Programming"
+      },
+      "description": {
+        "it": "Una guida completa alla programmazione Python, dalle basi ai concetti avanzati.",
+        "en": "A complete guide to Python programming, from basics to advanced concepts."
+      },
+      "url": "https://amzn.eu/d/iGpOzrh",
+      "coverImage": "/programmazione_python_mockup.png"
+    },
+    {
+      "title": {
+        "it": "Programmazione in C",
+        "en": "C Programming"
+      },
+      "description": {
+        "it": "Fondamenti della programmazione in linguaggio C per sviluppatori moderni.",
+        "en": "C programming fundamentals for modern developers."
+      },
+      "url": "https://www.amazon.it/dp/example2",
+      "coverImage": "/programmazione_c_mockup.png"
+    },
+    {
+      "title": {
+        "it": "Intelligenza Artificiale Applicata",
+        "en": "Applied Artificial Intelligence"
+      },
+      "description": {
+        "it": "Esplorazione dei fondamenti e delle applicazioni dell'intelligenza artificiale moderna.",
+        "en": "Exploring the fundamentals and applications of modern artificial intelligence."
+      },
+      "url": "https://www.amazon.it/dp/example3",
+      "coverImage": "/intelligenza_artificiale_mockup.png"
+    },
+    {
+       "title": {
+        "it": "Linux per Professionisti",
+        "en": "Linux for Professionals"
+      },
+      "description": {
+        "it": "Una introduzione pratica al sistema operativo Linux e alla sua amministrazione.",
+        "en": "A practical introduction to the Linux operating system and its administration."
+      },
+      "url": "https://www.amazon.it/dp/example4",
+      "coverImage": "/linux_mockup.png"
+    }
+  ]
+}
