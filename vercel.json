@@ -4,8 +4,10 @@
   "outputDirectory": "packages/frontend/dist",
   "installCommand": "pnpm install",
   "framework": "vite",
-  "env": {
-    "ENABLE_EXPERIMENTAL_COREPACK": "1"
+  "build": {
+    "env": {
+      "ENABLE_EXPERIMENTAL_COREPACK": "1"
+    }
   },
   "rewrites": [
     {
