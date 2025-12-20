@@ -18,22 +18,41 @@ export default function ContactPage() {
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus('sending');
+    setErrorMessage('');
+
+    // Debug: Log configuration
+    console.log('EmailJS Config:', {
+      serviceId: emailJsConfig.serviceId,
+      templateId: emailJsConfig.templateId,
+      publicKey: emailJsConfig.publicKey ? '***' + emailJsConfig.publicKey.slice(-4) : 'missing',
+      isConfigured: isEmailJsConfigured()
+    });
 
     // Check if EmailJS is configured
     if (!isEmailJsConfigured()) {
-      console.error('EmailJS non è configurato. Controlla il file .env.local');
+      const missingVars = [];
+      if (!emailJsConfig.serviceId) missingVars.push('VITE_EMAILJS_SERVICE_ID');
+      if (!emailJsConfig.templateId) missingVars.push('VITE_EMAILJS_TEMPLATE_ID');
+      if (!emailJsConfig.publicKey) missingVars.push('VITE_EMAILJS_PUBLIC_KEY');
+
+      const errorMsg = `EmailJS non configurato. Variabili mancanti: ${missingVars.join(', ')}. Riavvia il server dopo aver modificato .env.local`;
+      console.error(errorMsg);
+      setErrorMessage(errorMsg);
       setStatus('error');
-      setTimeout(() => setStatus('idle'), 3000);
+      setTimeout(() => setStatus('idle'), 10000);
       return;
     }
 
     try {
+      console.log('Invio email in corso...');
+
       // Send email using EmailJS
-      await emailjs.send(
+      const response = await emailjs.send(
         emailJsConfig.serviceId,
         emailJsConfig.templateId,
         {
@@ -41,19 +60,45 @@ export default function ContactPage() {
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_email: 'cristiantesco@gmail.com', // Your email
+          to_email: 'cristiantesco@gmail.com',
         },
         emailJsConfig.publicKey
       );
 
+      console.log('Email inviata con successo!', response);
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
+      setErrorMessage('');
 
       setTimeout(() => setStatus('idle'), 5000);
-    } catch (error) {
-      console.error('Errore nell\'invio dell\'email:', error);
+    } catch (error: any) {
+      console.error('Errore completo:', error);
+
+      let errorMsg = 'Errore sconosciuto';
+      if (error?.text) {
+        errorMsg = `EmailJS Error: ${error.text}`;
+      } else if (error?.message) {
+        errorMsg = `Error: ${error.message}`;
+      } else if (typeof error === 'string') {
+        errorMsg = error;
+      }
+
+      // Common EmailJS errors
+      if (errorMsg.includes('Service') || errorMsg.includes('service')) {
+        errorMsg += ' - Verifica che il Service ID sia corretto nella dashboard EmailJS';
+      } else if (errorMsg.includes('Template') || errorMsg.includes('template')) {
+        errorMsg += ' - Verifica che il Template ID sia corretto e che il template esista';
+      } else if (errorMsg.includes('Public') || errorMsg.includes('public')) {
+        errorMsg += ' - Verifica che la Public Key sia corretta';
+      }
+
+      console.error('Messaggio errore:', errorMsg);
+      setErrorMessage(errorMsg);
       setStatus('error');
-      setTimeout(() => setStatus('idle'), 5000);
+      setTimeout(() => {
+        setStatus('idle');
+        setErrorMessage('');
+      }, 15000);
     }
   };
 
@@ -244,8 +289,11 @@ export default function ContactPage() {
                   )}
 
                   {status === 'error' && (
-                    <div className="p-3 sm:p-4 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200 rounded-lg text-center text-xs sm:text-sm">
-                      {t('contact.form.error')}
+                    <div className="p-3 sm:p-4 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200 rounded-lg text-xs sm:text-sm">
+                      <p className="font-semibold mb-2">{t('contact.form.error')}</p>
+                      {errorMessage && (
+                        <p className="text-xs break-words whitespace-pre-wrap">{errorMessage}</p>
+                      )}
                     </div>
                   )}
                 </form>

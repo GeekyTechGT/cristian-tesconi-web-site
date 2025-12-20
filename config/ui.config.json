@@ -14,13 +14,6 @@
           "it": "Paper pubblicati",
           "en": "Published Papers"
         }
-      },
-      {
-        "value": "FMI 3.0",
-        "label": {
-          "it": "Standard avanzato",
-          "en": "Advanced Standard"
-        }
       }
     ],
     "backgroundImage": "/hero.png",

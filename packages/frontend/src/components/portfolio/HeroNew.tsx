@@ -44,12 +44,12 @@ export default function HeroNew() {
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-surface dark:bg-dark-bg tech-grid-bg">
       {/* Background image for simulation/FMI/complex systems */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-15 dark:opacity-25"
+        className="absolute inset-0 bg-cover bg-center opacity-10 dark:opacity-25"
         style={{ backgroundImage: `url('${uiConfig.hero.backgroundImage}')` }}
       />
 
-      {/* Dark gradient overlay for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40 dark:from-black/60 dark:via-black/30 dark:to-black/60" />
+      {/* Vibrant gradient mesh overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 dark:from-black/60 dark:via-black/30 dark:to-black/60" />
 
       {/* Animated background elements with parallax */}
       <div className="absolute inset-0 overflow-hidden">
@@ -135,7 +135,7 @@ export default function HeroNew() {
 
       <motion.div
         style={{ opacity }}
-        className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 md:py-8 relative z-10"
+        className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 relative z-10"
       >
         <motion.div
           variants={containerVariants}
@@ -174,14 +174,13 @@ export default function HeroNew() {
           {/* Title with typing effect appearance */}
           <motion.h2
             variants={itemVariants}
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-text-light mb-4 sm:mb-6 px-4"
-            style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(0, 0, 0, 0.6)' }}
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-text-light mb-4 sm:mb-6 px-4 drop-shadow-lg"
           >
             <motion.span
               initial={{ opacity: 0, width: 0 }}
               animate={{ opacity: 1, width: 'auto' }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="inline-block"
+              className="inline-block px-4 py-2 bg-white/90 dark:bg-transparent backdrop-blur-md rounded-2xl border-2 border-white/50 dark:border-transparent shadow-xl dark:shadow-none"
             >
               {personalInfo.title[currentLang]}
             </motion.span>
@@ -190,10 +189,11 @@ export default function HeroNew() {
           {/* Subtitle */}
           <motion.p
             variants={itemVariants}
-            className="text-base sm:text-lg md:text-xl text-text-light max-w-3xl mx-auto mb-6 sm:mb-8 px-4"
-            style={{ textShadow: '0 2px 6px rgba(0, 0, 0, 0.8), 0 3px 12px rgba(0, 0, 0, 0.5)' }}
+            className="text-base sm:text-lg md:text-xl text-gray-800 dark:text-text-light max-w-3xl mx-auto mb-6 sm:mb-8 px-4"
           >
-            {personalInfo.subtitle[currentLang]}
+            <span className="inline-block px-6 py-4 bg-white/95 dark:bg-transparent backdrop-blur-lg rounded-2xl border-2 border-white/60 dark:border-transparent shadow-2xl dark:shadow-none font-semibold leading-relaxed">
+              {personalInfo.subtitle[currentLang]}
+            </span>
           </motion.p>
 
           {/* Quick Stats - Key highlights */}
@@ -201,20 +201,38 @@ export default function HeroNew() {
             variants={itemVariants}
             className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 px-4"
           >
-            {uiConfig.hero.stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.1, y: -5 }}
-                className="flex flex-col items-center gap-1 px-4 py-3 bg-surface-darker/40 backdrop-blur-sm rounded-lg border border-primary/30 hover:border-primary/60 transition-all"
-              >
-                <span className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary via-emerald-400 to-secondary bg-clip-text text-transparent">
-                  {stat.value}
-                </span>
-                <span className="text-xs sm:text-sm text-text-light/80 text-center">
-                  {stat.label[currentLang]}
-                </span>
-              </motion.div>
-            ))}
+            {uiConfig.hero.stats.map((stat, index) => {
+              const gradients = [
+                'from-primary to-secondary',
+                'from-secondary to-primary',
+                'from-primary via-cyan-400 to-secondary',
+                'from-cyan-500 to-primary'
+              ];
+              const shadows = [
+                'hover:shadow-primary/50',
+                'hover:shadow-secondary/50',
+                'hover:shadow-primary/50',
+                'hover:shadow-cyan-500/50'
+              ];
+              return (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.15, y: -8, rotate: [0, -2, 2, 0] }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`group flex flex-col items-center gap-1 px-5 py-4 bg-white/80 dark:bg-gradient-to-br dark:from-surface-darker/80 dark:to-surface-darker/60 backdrop-blur-xl rounded-2xl border-2 border-white/40 dark:border-primary/50 hover:border-transparent dark:hover:border-primary transition-all shadow-2xl dark:shadow-[0_0_30px_rgba(22,255,187,0.3)] dark:hover:shadow-[0_0_50px_rgba(22,255,187,0.6)] ${shadows[index % shadows.length]}`}
+                  style={{
+                    boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)'
+                  }}
+                >
+                  <span className={`text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r ${gradients[index % gradients.length]} bg-clip-text text-transparent drop-shadow-lg group-hover:drop-shadow-2xl dark:drop-shadow-[0_0_20px_rgba(22,255,187,0.8)] transition-all`}>
+                    {stat.value}
+                  </span>
+                  <span className="text-xs sm:text-sm text-gray-800 dark:text-text-light font-bold text-center group-hover:text-gray-900 dark:group-hover:text-primary dark:group-hover:drop-shadow-[0_0_10px_rgba(22,255,187,0.8)] transition-all">
+                    {stat.label[currentLang]}
+                  </span>
+                </motion.div>
+              );
+            })}
           </motion.div>
 
           {/* Contact info quick links with stagger */}
@@ -232,13 +250,16 @@ export default function HeroNew() {
                 href={item.href}
                 target={item.external ? '_blank' : undefined}
                 rel={item.external ? 'noopener noreferrer' : undefined}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg bg-surface-darker/50 backdrop-blur-sm hover:bg-surface-darker border border-border-dark hover:border-primary/50 transition-all text-text-light hover:text-white dark:hover:text-primary hover:font-bold text-sm sm:text-base shadow-lg hover:shadow-primary/20"
+                whileHover={{ scale: 1.08, y: -4 }}
+                whileTap={{ scale: 0.95 }}
+                className="group inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl bg-white/90 dark:bg-surface-darker/80 backdrop-blur-lg hover:bg-gradient-to-r hover:from-white hover:to-primary/10 dark:hover:bg-gradient-to-r dark:hover:from-surface-darker dark:hover:to-primary/20 border-2 border-gray-200 dark:border-primary/30 hover:border-primary dark:hover:border-primary hover:shadow-2xl hover:shadow-primary/40 dark:hover:shadow-[0_0_30px_rgba(22,255,187,0.5)] transition-all text-gray-800 dark:text-primary hover:text-primary dark:hover:text-white text-sm sm:text-base font-semibold"
+                style={{
+                  boxShadow: '0 4px 24px 0 rgba(31, 38, 135, 0.1)'
+                }}
               >
-                <item.icon className="h-4 w-4 flex-shrink-0" />
-                <span className="hidden md:inline truncate">{item.text}</span>
-                {item.shortText && <span className="md:hidden">{item.shortText}</span>}
+                <item.icon className="h-4 w-4 flex-shrink-0 group-hover:rotate-12 group-hover:scale-125 dark:group-hover:drop-shadow-[0_0_8px_rgba(22,255,187,0.8)] transition-all" />
+                <span className="hidden md:inline truncate dark:group-hover:drop-shadow-[0_0_8px_rgba(22,255,187,0.6)]">{item.text}</span>
+                {item.shortText && <span className="md:hidden dark:group-hover:drop-shadow-[0_0_8px_rgba(22,255,187,0.6)]">{item.shortText}</span>}
               </motion.a>
             ))}
           </motion.div>
@@ -255,35 +276,48 @@ export default function HeroNew() {
                   aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
               }}
-              whileHover={{ scale: 1.08, boxShadow: '0 0 30px rgba(22, 255, 187, 0.5)' }}
+              whileHover={{ scale: 1.1, boxShadow: '0 20px 60px rgba(22, 255, 187, 0.7)' }}
               whileTap={{ scale: 0.95 }}
-              className="group relative inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary via-emerald-400 to-secondary text-white dark:text-darkBg font-bold rounded-lg overflow-hidden shadow-2xl shadow-primary/50 text-sm sm:text-base"
+              className="group relative inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-primary to-secondary text-white font-black rounded-2xl overflow-hidden shadow-2xl shadow-primary/60 text-sm sm:text-base hover:shadow-primary/80 transition-all"
             >
               <motion.span
                 className="absolute inset-0 bg-gradient-to-r from-secondary to-primary"
                 initial={{ x: '100%' }}
                 whileHover={{ x: '0%' }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.4, ease: 'easeInOut' }}
               />
-              <span className="relative z-10">{t('hero.viewPortfolio')}</span>
+              <span className="relative z-10 flex items-center gap-2">
+                <motion.span
+                  animate={{
+                    textShadow: [
+                      '0 0 8px rgba(255,255,255,0.5)',
+                      '0 0 12px rgba(255,255,255,0.8)',
+                      '0 0 8px rgba(255,255,255,0.5)'
+                    ]
+                  }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  {t('hero.viewPortfolio')}
+                </motion.span>
+              </span>
               <motion.div
-                animate={{ x: [0, 5, 0] }}
+                animate={{ x: [0, 6, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
                 className="relative z-10"
               >
-                <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
+                <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 group-hover:rotate-45 transition-transform" />
               </motion.div>
             </motion.button>
 
             <motion.a
               href={personalInfo.cvDownloadUrl}
               download
-              whileHover={{ scale: 1.08 }}
+              whileHover={{ scale: 1.08, y: -4 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white dark:hover:text-dark-bg transition-all bg-surface-darker/50 backdrop-blur-sm shadow-lg hover:shadow-primary/50 text-sm sm:text-base"
+              className="group inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 sm:py-5 border-2 border-primary bg-white/90 dark:bg-surface-darker/80 text-primary font-black rounded-2xl hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-white hover:border-transparent dark:hover:border-primary transition-all backdrop-blur-lg shadow-xl hover:shadow-2xl hover:shadow-primary/60 dark:shadow-[0_0_30px_rgba(22,255,187,0.2)] dark:hover:shadow-[0_0_50px_rgba(22,255,187,0.6)] text-sm sm:text-base"
             >
-              <Download className="h-4 w-4 sm:h-5 sm:w-5" />
-              {t('about.downloadCV')}
+              <Download className="h-5 w-5 sm:h-6 sm:w-6 group-hover:animate-bounce dark:group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+              <span className="dark:group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">{t('about.downloadCV')}</span>
             </motion.a>
           </motion.div>
 
