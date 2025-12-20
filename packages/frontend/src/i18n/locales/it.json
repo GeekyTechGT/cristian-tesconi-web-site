@@ -9,6 +9,7 @@
     "about": "Chi Sono",
     "experience": "Esperienza",
     "skills": "Competenze",
+    "publications": "Pubblicazioni",
     "books": "Libri",
     "contact": "Contatti"
   },
@@ -34,6 +35,12 @@
     "title": "Competenze Tecniche",
     "subtitle": "Le mie competenze principali in programmazione, robotica e automazione acquisite attraverso anni di esperienza nel settore automotive e robotico",
     "legend": "Livelli di competenza",
+    "proficiency": {
+      "expert": "Esperto",
+      "proficient": "Competente",
+      "intermediate": "Intermedio",
+      "basic": "Base"
+    },
     "categories": {
       "programming": "Programmazione",
       "engineering": "Ingegneria",
@@ -66,6 +73,13 @@
     "description": "Esplora la mia collezione di libri tecnici",
     "viewOnAmazon": "Vedi su Amazon",
     "learnMore": "Scopri di più"
+  },
+  "publications": {
+    "title": "Pubblicazioni Scientifiche",
+    "subtitle": "Paper di ricerca e pubblicazioni tecniche su simulazione multifisica, standard FMI e conformità ASAM",
+    "all": "Tutte le Pubblicazioni",
+    "readPaper": "Leggi Paper",
+    "noPublications": "Nessuna pubblicazione trovata in questa categoria"
   },
   "contact": {
     "title": "Contatti",
@@ -165,6 +179,7 @@
   },
   "footer": {
     "copyright": "© {{year}} Cristian Tesconi. Tutti i diritti riservati.",
+    "rights": "Tutti i diritti riservati.",
     "madeWith": "Realizzato con",
     "quickLinks": "Link Rapidi",
     "followMe": "Seguimi"

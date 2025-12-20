@@ -2,9 +2,11 @@ import { useTranslation } from 'react-i18next';
 import { Mail, Linkedin, MapPin, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Card from '@/components/shared/Card';
+import { personalInfo } from '@/data/portfolioConfig';
 
 export default function Contact() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language as 'it' | 'en';
 
   return (
     <section id="contact" className="section bg-surface dark:bg-dark-bg pt-16 sm:pt-20 pb-16 sm:pb-20">
@@ -28,8 +30,8 @@ export default function Contact() {
               </div>
               <div className="min-w-0 flex-1">
                 <p className="text-xs sm:text-sm text-text-muted dark:text-text-light">{t('contact.email')}</p>
-                <a href="mailto:cristian.tesconi@example.com" className="text-sm sm:text-lg font-semibold text-primary hover:text-primary-dark hover:font-bold hover:underline truncate block transition-all">
-                  cristian.tesconi@example.com
+                <a href={`mailto:${personalInfo.email}`} className="text-sm sm:text-lg font-semibold text-primary hover:text-primary-dark hover:font-bold hover:underline truncate block transition-all">
+                  {personalInfo.email}
                 </a>
               </div>
             </div>
@@ -41,12 +43,12 @@ export default function Contact() {
               <div className="min-w-0 flex-1">
                 <p className="text-xs sm:text-sm text-text-muted dark:text-text-light">{t('contact.linkedin')}</p>
                 <a
-                  href="https://www.linkedin.com/in/cristian-tesconi"
+                  href={personalInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm sm:text-lg font-semibold text-primary hover:text-primary-dark hover:font-bold hover:underline truncate block transition-all"
                 >
-                  linkedin.com/in/cristian-tesconi
+                  {personalInfo.linkedin.replace('https://www.', '')}
                 </a>
               </div>
             </div>
@@ -57,7 +59,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-xs sm:text-sm text-text-muted dark:text-text-light">{t('contact.location')}</p>
-                <p className="text-sm sm:text-lg font-semibold text-text-primary dark:text-surface">Italy</p>
+                <p className="text-sm sm:text-lg font-semibold text-text-primary dark:text-surface">{personalInfo.location[currentLang]}</p>
               </div>
             </div>
 

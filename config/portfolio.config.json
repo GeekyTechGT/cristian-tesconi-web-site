@@ -2,21 +2,21 @@
   "personalInfo": {
     "name": "Cristian Tesconi",
     "title": {
-      "it": "Ingegnere Robotico e dell'Automazione",
-      "en": "Robotic and Automation Engineer"
+        "it": "Ingegnere in Modellazione e Simulazione",
+        "en": "Modeling and Simulation Engineer"
     },
     "subtitle": {
-      "it": "Specializzato in automazione intelligente, sistemi di controllo e intelligenza artificiale",
-      "en": "Specialized in intelligent automation, control systems, and artificial intelligence"
+      "it": "Laurea in Ingegneria Robotica e dell'Automazione | Specializzato in simulazione FMU/FMI, sviluppo tool GUI/CLI e automazione dei processi automotive",
+      "en": "Robotics and Automation Engineering Degree | Specialized in FMU/FMI simulation, GUI/CLI tool development, and automotive process automation"
     },
     "bio": {
-      "it": "Ingegnere robotico e dell'automazione con oltre 6 anni di esperienza nello sviluppo di sistemi intelligenti per l'industria automotive. Attualmente SIL Engineer presso Dumarey Softronix, specializzato in modellazione di plant, sviluppo di tool per test SIL e simulazione. Esperienza in sviluppo software embedded, algoritmi di controllo avanzati e veicoli autonomi.",
-      "en": "Robotic and automation engineer with over 6 years of experience in developing intelligent systems for the automotive industry. Currently SIL Engineer at Dumarey Softronix, specialized in plant modeling, SIL test tool development and simulation. Experience in embedded software development, advanced control algorithms and autonomous vehicles."
+      "it": "Ingegnere in modellazione e simulazione con oltre 6 anni di esperienza nello sviluppo di sistemi intelligenti per l'industria automotive. Attualmente SIL Engineer presso Dumarey Softronix, esperto in integrazione FMU/FMI, modellazione di plant, sviluppo di tool GUI e CLI per test SIL e simulazione. Competente in standard ASAM (XCP, MDF), software embedded, algoritmi di controllo avanzati e veicoli autonomi, con focus su ottimizzazione dei processi, automazione scalabile e sviluppo di soluzioni innovative.",
+      "en": "Modeling and simulation engineer with over 6 years of experience developing intelligent systems for the automotive industry. Currently SIL Engineer at Dumarey Softronix, expert in FMU/FMI integration, plant modeling, and GUI/CLI tool development for SIL testing and simulation. Skilled in ASAM standards (XCP, MDF), embedded software, advanced control algorithms, and autonomous vehicles, with a focus on process optimization, scalable automation, and innovative solution development."
     },
     "email": "cristiantesco@gmail.com",
     "phone": "+39 3401456297",
     "linkedin": "https://www.linkedin.com/in/cristian-tesconi-936832117",
-    "github": "https://github.com/cristiantesconi",
+    "github": "https://github.com/GeekyTechGT",
     "location": {
       "it": "Torino, Italia",
       "en": "Turin, Italy"

@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "stats": [
+      {
+        "value": "6+",
+        "label": {
+          "it": "Anni di esperienza",
+          "en": "Years of Experience"
+        }
+      },
+      {
+        "value": "2",
+        "label": {
+          "it": "Paper pubblicati",
+          "en": "Published Papers"
+        }
+      },
+      {
+        "value": "FMI 3.0",
+        "label": {
+          "it": "Standard avanzato",
+          "en": "Advanced Standard"
+        }
+      }
+    ],
+    "backgroundImage": "/hero.png",
+    "backgroundImageAlternatives": {
+      "customHero": "/hero.png",
+      "earth": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2070",
+      "dataVisualization": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070",
+      "circuitBoard": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070",
+      "automotive": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2070",
+      "networkNodes": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070",
+      "engineeringBlueprint": "https://images.unsplash.com/photo-1581094794329-c8112e612f3d?q=80&w=2070"
+    }
+  },
+  "footer": {
+    "showSocialLinks": true,
+    "links": {
+      "linkedin": true,
+      "github": true,
+      "email": true
+    }
+  },
+  "navigation": {
+    "sections": [
+      "home",
+      "about",
+      "experience",
+      "skills",
+      "publications",
+      "books",
+      "contact"
+    ]
+  },
+  "theme": {
+    "defaultMode": "dark",
+    "allowToggle": true
+  }
+}

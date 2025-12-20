@@ -73,11 +73,19 @@
   }
   
   .section {
-    @apply min-h-screen py-20 px-4 md:px-8 lg:px-16;
+    @apply py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-12 xl:px-16;
   }
-  
+
+  .section-compact {
+    @apply py-8 md:py-12 lg:py-16 px-4 md:px-6 lg:px-12 xl:px-16;
+  }
+
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+
+  .container-wide {
+    @apply max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16;
   }
   
   .glass {
@@ -90,6 +98,29 @@
   
   .gradient-bg {
     @apply bg-gradient-to-br from-dark-bg via-gray-900 to-dark-bg;
+  }
+
+  .tech-grid-bg {
+    background-image:
+      linear-gradient(rgba(22, 255, 187, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(22, 255, 187, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .circuit-pattern {
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(22, 255, 187, 0.05) 1px, transparent 1px),
+      radial-gradient(circle at 80% 80%, rgba(22, 255, 187, 0.05) 1px, transparent 1px),
+      linear-gradient(rgba(22, 255, 187, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(22, 255, 187, 0.02) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  }
+
+  .hex-pattern {
+    background-image:
+      repeating-linear-gradient(120deg, transparent, transparent 70px, rgba(22, 255, 187, 0.03) 70px, rgba(22, 255, 187, 0.03) 71px),
+      repeating-linear-gradient(60deg, transparent, transparent 70px, rgba(22, 255, 187, 0.03) 70px, rgba(22, 255, 187, 0.03) 71px),
+      repeating-linear-gradient(0deg, transparent, transparent 70px, rgba(22, 255, 187, 0.03) 70px, rgba(22, 255, 187, 0.03) 71px);
   }
   
   .text-gradient {
@@ -182,12 +213,81 @@
     animation: shimmer 2s infinite;
   }
 
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+
   @keyframes shimmer {
     0% {
       transform: translateX(-100%);
     }
     100% {
       transform: translateX(100%);
+    }
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px rgba(22, 255, 187, 0.2), 0 0 20px rgba(22, 255, 187, 0.1);
+    }
+    to {
+      box-shadow: 0 0 20px rgba(22, 255, 187, 0.4), 0 0 40px rgba(22, 255, 187, 0.2);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes rotate-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 

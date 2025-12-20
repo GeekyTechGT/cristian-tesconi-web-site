@@ -9,6 +9,7 @@
     "about": "About",
     "experience": "Experience",
     "skills": "Skills",
+    "publications": "Publications",
     "books": "Books",
     "contact": "Contact"
   },
@@ -34,6 +35,12 @@
     "title": "Technical Skills",
     "subtitle": "My core competencies in programming, robotics and automation gained through years of experience in automotive and robotics sectors",
     "legend": "Proficiency levels",
+    "proficiency": {
+      "expert": "Expert",
+      "proficient": "Proficient",
+      "intermediate": "Intermediate",
+      "basic": "Basic"
+    },
     "categories": {
       "programming": "Programming",
       "engineering": "Engineering",
@@ -66,6 +73,13 @@
     "description": "Explore my collection of technical books",
     "viewOnAmazon": "View on Amazon",
     "learnMore": "Learn More"
+  },
+  "publications": {
+    "title": "Scientific Publications",
+    "subtitle": "Research papers and technical publications on multi-physics simulation, FMI standard, and ASAM compliance",
+    "all": "All Publications",
+    "readPaper": "Read Paper",
+    "noPublications": "No publications found in this category"
   },
   "contact": {
     "title": "Contact",
@@ -165,6 +179,7 @@
   },
   "footer": {
     "copyright": "© {{year}} Cristian Tesconi. All rights reserved.",
+    "rights": "All rights reserved.",
     "madeWith": "Made with",
     "quickLinks": "Quick Links",
     "followMe": "Follow Me"

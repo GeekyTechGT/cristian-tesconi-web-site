@@ -1,4 +1,4 @@
-import appConfig from './config/app.config.json';
+import appConfig from '../../config/app.config.json';
 
 /** @type {import('tailwindcss').Config} */
 export default {

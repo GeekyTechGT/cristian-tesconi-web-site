@@ -1,0 +1,52 @@
+{
+  "publications": [
+    {
+      "id": "pub-001",
+      "title": {
+        "en": "Integrating SystemC TLM into FMI 3.0 Co-Simulations with an Open-Source Approach",
+        "it": "Integrazione di SystemC TLM in Co-Simulazioni FMI 3.0 con un Approccio Open-Source"
+      },
+      "authors": ["Andrei Mihai Albu", "Giovanni Pollo", "Alessio Burrello", "Daniele Jahier Pagliari", "Cristian Tesconi", "Alessandra Neri", "Dario Soldi", "Fabio Autieri", "Sara Vinco"],
+      "year": 2025,
+      "conference": "DVCon Europe 2025 - Munich, Germany (October 14-16, 2025)",
+      "abstract": {
+        "en": "This paper presents a fully open-source methodology for integrating SystemC TLM models into Functional Mock-up Interface (FMI)-based co-simulation workflows. The approach encapsulates SystemC TLM components as FMI 3.0 Co-Simulation Functional Mock-up Units to enable seamless, standardized integration across heterogeneous simulation environments.",
+        "it": "La crescente complessit\u00e0 dei sistemi ciber-fisici ha reso necessari nuovi approcci per la co-simulazione tra diversi domini. Questo articolo presenta una metodologia open-source per integrare i modelli SystemC TLM nei flussi di lavoro basati su FMI 3.0, incapsulando i componenti come Functional Mock-up Units standardizzati."
+      },
+      "url": "https://arxiv.org/abs/2508.20223",
+      "tags": ["FMI 3.0", "SystemC", "TLM", "Co-Simulation", "Open-Source", "Cyber-Physical Systems", "DVCon"],
+      "category": "conference"
+    },
+    {
+      "id": "pub-002",
+      "title": {
+        "en": "Building an In-House SIL Framework: Key Design Choices, Features, and Performance Evaluation",
+        "it": "Sviluppo di un Framework SIL In-House: Scelte Progettuali Chiave, Funzionalit\u00e0 e Valutazione delle Prestazioni"
+      },
+      "authors": ["Claudio Mancuso", "Cristian Tesconi", "Fabio Autieri"],
+      "year": 2025,
+      "conference": "SAE 17th International Conference on Engines and Vehicles for Sustainable Transport",
+      "abstract": {
+        "en": "This paper presents the design and implementation of an in-house Software-in-the-Loop (SIL) framework for automotive applications. The work focuses on key architectural decisions, core features, and comprehensive performance evaluation of the developed simulation environment for control systems validation.",
+        "it": "Questo articolo presenta la progettazione e implementazione di un framework Software-in-the-Loop (SIL) sviluppato internamente per applicazioni automotive. Il lavoro si concentra sulle decisioni architetturali chiave, funzionalit\u00e0 principali e valutazione completa delle prestazioni dell'ambiente di simulazione per la validazione di sistemi di controllo."
+      },
+      "url": "https://www.sae.org/publications/technical-papers/content/2025-24-0018/",
+      "tags": ["SIL", "Software-in-the-Loop", "Automotive", "Control Systems", "Performance Evaluation", "Simulation Framework"],
+      "category": "conference"
+    }
+  ],
+  "categories": {
+    "conference": {
+      "en": "Conference Papers",
+      "it": "Pubblicazioni Conferenze"
+    },
+    "journal": {
+      "en": "Journal Articles",
+      "it": "Articoli su Riviste"
+    },
+    "preprint": {
+      "en": "Preprints & Technical Reports",
+      "it": "Preprint e Rapporti Tecnici"
+    }
+  }
+}

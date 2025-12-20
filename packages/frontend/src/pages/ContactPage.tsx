@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import { Mail, Linkedin, MapPin, Send, Home } from 'lucide-react';
 import { useState, FormEvent } from 'react';
 import Card from '@/components/shared/Card';
+import { personalInfo } from '@/data/portfolioConfig';
 
 export default function ContactPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language as 'it' | 'en';
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -81,10 +83,10 @@ export default function ContactPage() {
                     <div className="min-w-0 flex-1">
                       <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{t('contact.email')}</p>
                       <a
-                        href="mailto:cristian.tesconi@example.com"
+                        href={`mailto:${personalInfo.email}`}
                         className="text-sm sm:text-lg font-semibold text-primary hover:underline truncate block"
                       >
-                        cristian.tesconi@example.com
+                        {personalInfo.email}
                       </a>
                     </div>
                   </div>
@@ -98,12 +100,12 @@ export default function ContactPage() {
                     <div className="min-w-0 flex-1">
                       <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{t('contact.linkedin')}</p>
                       <a
-                        href="https://www.linkedin.com/in/cristian-tesconi"
+                        href={personalInfo.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm sm:text-lg font-semibold text-primary hover:underline truncate block"
                       >
-                        linkedin.com/in/cristian-tesconi
+                        {personalInfo.linkedin.replace('https://www.', '')}
                       </a>
                     </div>
                   </div>
@@ -116,7 +118,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{t('contact.location')}</p>
-                      <p className="text-sm sm:text-lg font-semibold text-gray-900 dark:text-white">Italy</p>
+                      <p className="text-sm sm:text-lg font-semibold text-gray-900 dark:text-white">{personalInfo.location[currentLang]}</p>
                     </div>
                   </div>
                 </Card>

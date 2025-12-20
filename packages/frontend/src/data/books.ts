@@ -1,5 +1,5 @@
 // Books data - imported from centralized configuration
-import booksConfig from '../../config/books.config.json';
+import booksConfig from '@/../../../config/books.config.json';
 
 export interface BookData {
   title: {

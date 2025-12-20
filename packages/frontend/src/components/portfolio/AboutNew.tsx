@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 import { GraduationCap, Award, MapPin, Languages } from 'lucide-react';
 import Card from '@/components/shared/Card';
 import { personalInfo, education, languages as langs } from '@/data/portfolioConfig';
@@ -6,10 +7,11 @@ import { personalInfo, education, languages as langs } from '@/data/portfolioCon
 export default function AboutNew() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language as 'it' | 'en';
+  const [expandedCourses, setExpandedCourses] = useState<{ [key: number]: boolean }>({});
 
   return (
-    <section id="about" className="section bg-surface dark:bg-dark-bg-subtle pt-16 sm:pt-20 pb-16 sm:pb-20 border-b-2 border-border-subtle dark:border-border-dark">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="about" className="section-compact bg-surface dark:bg-dark-bg-subtle border-b-2 border-border-subtle dark:border-border-dark circuit-pattern">
+      <div className="max-w-[1600px] mx-auto px-4">
         <div className="flex items-center justify-center gap-4 mb-4">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/50 to-primary"></div>
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-primary">
@@ -133,7 +135,10 @@ export default function AboutNew() {
                     {t('about.mainCourses', 'Principali corsi seguiti')}:
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {edu.courses[currentLang].slice(0, 6).map((course, idx) => (
+                    {(expandedCourses[index]
+                      ? edu.courses[currentLang]
+                      : edu.courses[currentLang].slice(0, 6)
+                    ).map((course, idx) => (
                       <span
                         key={idx}
                         className="text-xs px-3 py-1.5 bg-gradient-to-r from-hover to-hover dark:from-surface-dark dark:to-surface-dark rounded-lg text-text-secondary dark:text-text-light font-medium border border-border dark:border-border-dark"
@@ -142,9 +147,15 @@ export default function AboutNew() {
                       </span>
                     ))}
                     {edu.courses[currentLang].length > 6 && (
-                      <span className="text-xs px-3 py-1.5 bg-gradient-to-r from-primary/30 to-secondary/30 dark:from-primary/40 dark:to-secondary/40 rounded-lg text-primary dark:text-secondary font-bold border border-primary/40 dark:border-secondary/40">
-                        +{edu.courses[currentLang].length - 6} {t('about.more', 'altri')}
-                      </span>
+                      <button
+                        onClick={() => setExpandedCourses(prev => ({ ...prev, [index]: !prev[index] }))}
+                        className="text-xs px-3 py-1.5 bg-gradient-to-r from-primary/30 to-secondary/30 dark:from-primary/40 dark:to-secondary/40 rounded-lg text-primary dark:text-secondary font-bold border border-primary/40 dark:border-secondary/40 hover:from-primary/50 hover:to-secondary/50 dark:hover:from-primary/60 dark:hover:to-secondary/60 transition-all cursor-pointer hover:scale-105 active:scale-95"
+                      >
+                        {expandedCourses[index]
+                          ? (currentLang === 'it' ? 'Mostra meno' : 'Show less')
+                          : `+${edu.courses[currentLang].length - 6} ${t('about.more', 'altri')}`
+                        }
+                      </button>
                     )}
                   </div>
                 </div>

@@ -1,5 +1,5 @@
 // Portfolio configuration loaded from JSON
-import portfolioData from '../../config/portfolio.config.json';
+import portfolioData from '@/../../../config/portfolio.config.json';
 
 export const {
   personalInfo,
@@ -33,3 +33,4 @@ export const getAllSkills = () => [
 ];
 
 export default portfolioData;
+ 

@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import { Briefcase, MapPin, Calendar, ChevronRight } from 'lucide-react';
 import Card from '@/components/shared/Card';
 import { experiences } from '@/data/portfolioConfig';
@@ -7,9 +8,32 @@ export default function ExperienceNew() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language as 'it' | 'en';
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { x: -50, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        stiffness: 70,
+        damping: 15
+      }
+    }
+  };
+
   return (
-    <section id="experience" className="section bg-surface dark:bg-dark-bg pt-16 sm:pt-20 pb-16 sm:pb-20 border-b-2 border-border-subtle dark:border-border-dark">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="experience" className="section bg-surface dark:bg-dark-bg border-b-2 border-border-subtle dark:border-border-dark">
+      <div className="max-w-[1600px] mx-auto px-4">
         <div className="flex items-center justify-center gap-4 mb-4">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/50 to-primary"></div>
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-primary">
@@ -21,18 +45,39 @@ export default function ExperienceNew() {
           {t('experience.subtitle', 'Il mio percorso professionale nel settore automotive e robotica')}
         </p>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-5xl mx-auto">
           {/* Timeline line on the left */}
-          <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/30 via-primary to-primary/30 shadow-lg shadow-primary/20" />
+          <motion.div
+            initial={{ height: 0 }}
+            whileInView={{ height: '100%' }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            className="absolute left-0 top-0 w-1 bg-gradient-to-b from-primary/30 via-primary to-primary/30 shadow-lg shadow-primary/20"
+          />
 
-          <div className="space-y-6 sm:space-y-8">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="space-y-6 sm:space-y-8"
+          >
             {experiences.map((exp, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={itemVariants}
+                whileHover={{ scale: 1.02, x: 10 }}
+                transition={{ type: 'spring', stiffness: 300 }}
                 className="relative pl-8 sm:pl-12"
               >
                 {/* Timeline dot */}
-                <div className="absolute left-0 top-6 transform -translate-x-1/2 w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-br from-primary to-primary-dark rounded-full border-3 border-dark-bg shadow-xl shadow-primary/50 z-10" />
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2, type: 'spring', stiffness: 200 }}
+                  className="absolute left-0 top-6 transform -translate-x-1/2 w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-br from-primary to-primary-dark rounded-full border-3 border-dark-bg shadow-xl shadow-primary/50 z-10 animate-pulse-slow"
+                />
 
                 {/* Content */}
                 <div className="w-full">
@@ -113,9 +158,9 @@ export default function ExperienceNew() {
                     )}
                   </Card>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
