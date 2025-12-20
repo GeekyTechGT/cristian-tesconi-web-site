@@ -3,8 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Mail, Linkedin, MapPin, Send, Home } from 'lucide-react';
 import { useState, FormEvent } from 'react';
+import emailjs from '@emailjs/browser';
 import Card from '@/components/shared/Card';
 import { personalInfo } from '@/data/portfolioConfig';
+import { emailJsConfig, isEmailJsConfigured } from '@/config/emailjs.config';
 
 export default function ContactPage() {
   const { t, i18n } = useTranslation();
@@ -21,20 +23,37 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus('sending');
 
-    try {
-      // Simulate API call - replace with your actual endpoint
-      await new Promise(resolve => setTimeout(resolve, 1000));
+    // Check if EmailJS is configured
+    if (!isEmailJsConfigured()) {
+      console.error('EmailJS non è configurato. Controlla il file .env.local');
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 3000);
+      return;
+    }
 
-      // Here you would typically send the data to your backend
-      console.log('Form data:', formData);
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        emailJsConfig.serviceId,
+        emailJsConfig.templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'cristiantesco@gmail.com', // Your email
+        },
+        emailJsConfig.publicKey
+      );
 
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
 
-      setTimeout(() => setStatus('idle'), 3000);
+      setTimeout(() => setStatus('idle'), 5000);
     } catch (error) {
+      console.error('Errore nell\'invio dell\'email:', error);
       setStatus('error');
-      setTimeout(() => setStatus('idle'), 3000);
+      setTimeout(() => setStatus('idle'), 5000);
     }
   };
 

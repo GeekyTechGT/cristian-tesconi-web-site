@@ -144,14 +144,14 @@ export default function HeroNew() {
           className="text-center"
         >
           {/* Greeting with icon */}
-          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-3 sm:mb-4">
+          <motion.div variants={itemVariants} className="flex items-center justify-center gap-2 mb-3 sm:mb-4 w-full px-4">
             <motion.div
               animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }}
               transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1 }}
             >
               <Sparkles className="h-5 w-5 text-primary" />
             </motion.div>
-            <p className="text-primary font-bold text-base sm:text-lg">
+            <p className="text-primary font-bold text-base sm:text-lg whitespace-nowrap">
               {t('hero.greeting')}
             </p>
           </motion.div>
@@ -322,3 +322,4 @@ export default function HeroNew() {
 
 
  
+
